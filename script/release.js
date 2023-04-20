@@ -8,10 +8,18 @@ exec("yarn");
 exec("yarn build");
 
 console.log("Creating release dir");
-exec("mkdir -p releases/" + version);
+
+// Update mkdir command based on the operating system
+const mkdirCommand = process.platform === 'win32' ? 'mkdir releases\\' + version : 'mkdir -p releases/' + version;
+console.log(mkdirCommand);
+exec(mkdirCommand);
 
 console.log("copying release files");
-exec("cp build/* releases/" + version);
 
-console.log("stage release artifiacts");
+// Update cp command based on the operating system
+const copyCommand = process.platform === 'win32' ? 'xcopy /s /e /i /q /y build\\* releases\\' + version : 'cp build/* releases/' + version;
+console.log(copyCommand);
+exec(copyCommand);
+
+console.log("stage release artifacts");
 exec("git add releases/" + version);
