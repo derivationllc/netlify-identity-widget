@@ -1,6 +1,6 @@
 :root {
-  --baseColor: rgb(14, 30, 37);
-  --subduedColor: #a3a9ac;
+  --baseColor: /*rgb(14, 30, 37)*/#4f6404;
+  --subduedColor: /*#a3a9ac*/green;
   --errorColor: #fa3946;
   --providerColorGoogle: #4285f4;
   --providerAltColorGoogle: #366dc7;
@@ -217,7 +217,7 @@
   cursor: pointer;
   border: 2px solid var(--baseColor);
   border-radius: 4px;
-  background-color: #2d3b41;
+  background-color: /*#2d3b41*/ #4f6404;
   color: #fff;
   transition: background-color 0.2s ease;
   font-family: var(--fontFamily);
@@ -266,6 +266,7 @@
   display: flex;
   margin-top: -8px;
   margin-bottom: var(--basePadding);
+  /*border:2px solid red;*/
 }
 
 .btnHeader {
@@ -341,7 +342,8 @@
   height: 40px;
   margin: 0;
   padding: 6px 12px 6px 34px;
-  border: 2px solid #e9ebeb;
+  border:none;
+  border-bottom: 2px solid #e9ebeb;
   border-radius: 4px;
   background: #fff;
   color: var(--baseColor);
@@ -354,6 +356,14 @@
   -moz-appearance: none;
 }
 
+.formControl:hover,
+.formControl:focus,
+.formControl:focus-visible
+{
+  border:none;
+  border-bottom: 2px solid #e9ebeb;
+  outline:none!important;
+}
 .inputFieldIcon {
   position: absolute;
   top: 12px;

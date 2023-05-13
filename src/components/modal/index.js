@@ -53,9 +53,12 @@ export default class Modal extends Component {
           onClick={this.blockEvent}
         >
           <div className="modalContent">
+          <div class="headerLogo">Derivation</div>
+            <div>
             <button onclick={this.handleClose} className="btn btnClose">
               <span className="visuallyHidden">Close</span>
             </button>
+            </div>
             {showHeader && (
               <div className="header">
                 {showSignup && (
